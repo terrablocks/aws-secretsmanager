@@ -2,6 +2,7 @@
 # Due to this issue dynamic block cannot be used for managing replica
 
 resource "aws_secretsmanager_secret" "normal" {
+  # checkov:skip=CKV_AWS_149: CMK encryption is a user choice
   count                   = length(var.replica) > 0 ? 0 : 1
   name                    = var.name
   description             = var.description
@@ -12,6 +13,7 @@ resource "aws_secretsmanager_secret" "normal" {
 }
 
 resource "aws_secretsmanager_secret" "replica" {
+  # checkov:skip=CKV_AWS_149: CMK encryption is a user choice
   count                   = length(var.replica) > 0 ? 1 : 0
   name                    = var.name
   description             = var.description
