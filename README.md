@@ -45,5 +45,5 @@ module "secret" {
 
 | Name | Description |
 |------|-------------|
-| secret_arn | ARN of the secret |
-| secret_version | Version ID of the secret |
+| arn | ARN of the secret |
+| version_id | Version ID of the secret |
